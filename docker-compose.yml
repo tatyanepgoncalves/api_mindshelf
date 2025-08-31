@@ -1,0 +1,15 @@
+version: "3.8"
+
+services: 
+  mindshelf-pg:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: tatyanepgoncalves023
+      POSTGRES_PASSWORD: esseestasendoincrivel
+      POSTGRES_DB: mindshelf
+    
+    ports: 
+      - "5432:5432"
+
+    volumes:
+      - ./docker/setup.sql:/docker-entrypoint-initdb.d/setup.sql
